@@ -39,5 +39,3 @@ Emilio Estevez: https://github.com/Emilio512 <br >
 n/a
 
 ## Questions
-Github: Ismeny Saguilan - https://github.com/Ismeny <br >
-Email: menysag2@gmail.com
