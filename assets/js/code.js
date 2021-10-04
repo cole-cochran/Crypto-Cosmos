@@ -336,7 +336,7 @@ $.ajax({
       label: 'My First dataset',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [sp3]
+      data: sp3
     }]
   };
   
