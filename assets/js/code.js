@@ -21,9 +21,11 @@ var vanEXS = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&
 
 
 var vanEX = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
+
 //NEXT 2 BELOW ARE FOR FUNCTION TO SEARCH FOR SPECIFIC EXCHANGE RATE--ONCE THAT WORKS:/
 //FUNCTION IS CURR AT LINE 51
 var vanEx1 = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency='
+
 var vanEx2 ='&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
 
 //BASES FOR GECKO ....
@@ -42,6 +44,7 @@ var geckoETH= geckoBase + 'coins/ethereum'
 var geckoEx = geckoBase + 'exchange_rates'
 
 var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+
 var geckoMarkToUs = geckoBase +'/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
 var geckoCateg= geckoBase + 'coins/categories'
@@ -69,7 +72,6 @@ console.log(topTrendPic);
 var coins=[] ;
 console.log('////////////ALL COINS////////////\n-------------')//FOR SEARCH
 console.log(coins);
-
 
 var sparkline=[] ;
 console.log('////////////SPARKLINE RAW FOR BIT////////////\n-------------');
@@ -103,7 +105,6 @@ var sparkLineBi=[];
 console.log('/////////BINANCE  MARKET CAP SPARKLINE////////////\n-------------');
 console.log(sparkLineBi);
 
-
 var sparkLineWall=[];
 console.log('/////////WALL-STREET-GAMING MARKET CAP SPARKLINE////////////\n-------------');
 console.log(sparkLineWall);
@@ -118,7 +119,7 @@ console.log('////////////EXCHANGE RATES VS USD API VAN////////////\n------------
 console.log(exchangeRatesVan);
 
 submit.on('click', function searcher(userInputCurr,userInputCoinGr){
-var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency=' + userInputCurr + '&ids=' + userInputCoinGr + '&order=market_cap_desc&per_page=100&page=1&sparkline=true'
 
 $.ajax({
     url: geckoMarkGraphBase,
@@ -128,10 +129,10 @@ $.ajax({
      userInputCurr=$(userInputCurr).val(),
      userInputCoinGr=$(userInputCoinGr).val(),
     //var rp1 = response.rates
-   //exchangeRates.push(rp1)
+    //exchangeRates.push(rp1)
 
-   searcher(userInputCurr,userInputCoinGr)
-   
+   searcher(userInputCurr , userInputCoinGr)
+
 });
 })
 ///HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
@@ -144,9 +145,8 @@ var exQuery= function exchange(){
         url: geckoMarkGraphBase,
         method: 'GET',
     }).then(function (response) {
-        console.log('EXCHANGE RATES \n-------------');
+        //console.log('EXCHANGE RATES \n-------------');
         console.log(response);
-       
         submit.on("click", function(event) {
         event.preventDefault();
         userChoice1=$(userChoice1).val()
@@ -157,7 +157,6 @@ var exQuery= function exchange(){
         
     })
     })
-
 }
 */
 $.ajax({
@@ -181,7 +180,6 @@ $.ajax({
     thb7=rp8.thumb
     topTrendPic.push(thb,thb2,thb3,thb4,thb5,thb6,thb7)
     topTrend.push(rp2,rp3,rp4,rp5,rp6,rp7,rp8)   
-  
 });
 
 $.ajax({
@@ -203,7 +201,7 @@ $.ajax({
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
      //console.log(sp3)
-    sparkLineBi.push(sp3)
+     sparkLineBi.push(sp3)
  });
 
 $.ajax({
@@ -217,11 +215,10 @@ $.ajax({
    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum&order=market_cap_desc&per_page=100&page=1&sparkline=true',
     method: 'GET',
 }).then(function (response) {
-    
     var sp1=response[0]
     var sp2=sp1.sparkline_in_7d
     var sp3=sp2.price 
-   sparkLineE.push(sp3)
+    sparkLineE.push(sp3)
 });
 
 $.ajax({
@@ -260,7 +257,6 @@ $.ajax({
     sparkLineUnM.push(sp3)
  });
 
-
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids= axie-infinity&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
@@ -284,7 +280,6 @@ $.ajax({
     sparkLineL.push(sp3)
  });
 
-
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ufo-gaming&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
@@ -296,8 +291,6 @@ $.ajax({
      //console.log(sp3)
     sparkLineUfo.push(sp3)
  });
-
-
  $.ajax({
     url: vanEXS ,
     method: 'GET',
@@ -313,7 +306,7 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true',
     method: 'GET',
 }).then(function (response) {
-    console.log('BITCOIN MARKET CAP/////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------');
+    console.log('BITCOIN MARKET CAP////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------');
      var sp1=response[0]
     var sp2=sp1.sparkline_in_7d
     //console.log(sp2)
@@ -349,6 +342,3 @@ const config = {
     document.getElementById('myChart'),
     config)
 });
-
-
-
