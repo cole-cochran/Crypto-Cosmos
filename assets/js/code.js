@@ -1,4 +1,4 @@
-var userChoice1=$('#user-choice');
+//var userChoice1=$('#user-choice');
 
 var userChoice2=$('#user-choice2');
 
@@ -10,9 +10,9 @@ var userInputPriceCo=$('');
 
 var userInputPriceCurr=$('');
 
-var userInputCoinGr=$('');
+var userInputCoinGr=$('#user-choice1').val()
 
-var userInputCurr=$('');
+var userInputCurr=$('#user-choice').val()
 
 //--VAN,GECKO DIFFERS API EX FOR EXCHANGE COINS FOR COINS+ID
 var geckoEx= 'https://api.coingecko.com/api/v3/exchange_rates';
@@ -42,7 +42,6 @@ var geckoETH= geckoBase + 'coins/ethereum'
 var geckoEx = geckoBase + 'exchange_rates'
 
 var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
-
 var geckoMarkToUs = geckoBase +'/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
 var geckoCateg= geckoBase + 'coins/categories'
@@ -117,18 +116,26 @@ console.log(exchangeRates);
 var exchangeRatesVan=[];
 console.log('////////////EXCHANGE RATES VS USD API VAN////////////\n-------------');
 console.log(exchangeRatesVan);
-/*
+
+submit.on('click', function searcher(userInputCurr,userInputCoinGr){
 var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+
 $.ajax({
     url: geckoMarkGraphBase,
     method: 'GET',
 }).then(function (response) {
-    //console.log('EXCHANGE RATES \n-------------');
-    var rp1 = response.rates
-   exchangeRates.push(rp1)
-});
-HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
+    console.log( response + '\n-------------');
+     userInputCurr=$(userInputCurr).val(),
+     userInputCoinGr=$(userInputCoinGr).val(),
+    //var rp1 = response.rates
+   //exchangeRates.push(rp1)
 
+   searcher(userInputCurr,userInputCoinGr)
+   
+});
+})
+///HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
+/*
 var exQuery= function exchange(){
     var vanEx1 = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency='
     var vanEx2 ='&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
@@ -276,6 +283,7 @@ $.ajax({
      //console.log(sp3)
     sparkLineL.push(sp3)
  });
+
 
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ufo-gaming&order=market_cap_desc&per_page=100&page=1&sparkline=true',
