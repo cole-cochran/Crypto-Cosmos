@@ -1,4 +1,4 @@
-# group-project-1
+# Crypto Cosmos - group-project-1
 A crypto currency dashboard with news and content.
 
 ## Description
@@ -22,7 +22,8 @@ Go to URL : ***INSERT URL***
 
 
 ## Credits
-Received help from:
+This website was built using: <br >
+Materialize  1.0.0
 
 
 ## License
@@ -39,3 +40,10 @@ Emilio Estevez: https://github.com/Emilio512 <br >
 n/a
 
 ## Questions
+Have any questions or ideas on how to improve our site? Please email us: <br >
+Ismeny Saguilan: menysag2@gmail.com <br >
+Nathan Delman: delman.nathan832@gmail.com  <br >
+Cole Cochran: colecochran405@gmail.com <br >
+Brian Albright: brianalbright@utexas.edu <br >
+Emilio Estevez: Edwardestevez95@gmail.com <br >
+
