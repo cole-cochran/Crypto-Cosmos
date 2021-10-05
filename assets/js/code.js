@@ -67,6 +67,46 @@ var geckoUrSimpleP='https://api.coingecko.com/api/v3/simple/price?ids=ethereum,b
 
 var geckoUrSimpleTP='https://api.coingecko.com/api/v3/'
 
+/**
+ * 
+ * 
+var getLocSearch = function(userInputCurr, userInputCoinGr) {
+    var locApiUrl = geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    fetch(locApiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                response.json().then(function(data) {
+                    displayResults(data, );
+                });
+            } else {
+                alert('Error: ' + response.statusText);
+            }
+        })
+        .catch(function(error) {
+            alert("Can't connect to the Library of Congress");
+            console.log(error);
+        });
+};
+var displayResults = function(data, query) {
+    if (data.length === 0) {
+        displaySearch.textContent = 'No Data Found...';
+        return;
+    } else {
+        console.log(query);
+        console.log(data);
+        displaySearch.textContent = `${query}`;
+        // loop through the data and display the results;
+        return;
+    }
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+
+
+  }); */
+
+
 
 var topTrend=[] ;
 console.log('////////////TOP 7 TRENDING COIN////////////\n-------------');
