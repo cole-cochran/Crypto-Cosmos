@@ -796,36 +796,36 @@ $.ajax({
   var sp3 = sp2.price;
   console.log(sp3)
   //data.datasets.push(sp3)
- /* const labels = [
-    "monday",
-    "Tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-    "sunday",
-  ];
-*/
- /* var data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "Bitcoin Market Cap Chart",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: sp3,
-      },
-    ],
-  };
+//  const labels = [
+//     "monday",
+//     "Tuesday",
+//     "wednesday",
+//     "thursday",
+//     "friday",
+//     "saturday",
+//     "sunday",
+//   ];
 
-  const config = {
-    type: "line",
-    data: data,
-    options: {},
-  };
+//   var data = {
+//     labels: labels,
+//     datasets: [
+//       {
+//         label: "Bitcoin Market Cap Chart",
+//         backgroundColor: "rgb(255, 99, 132)",
+//         borderColor: "rgb(255, 99, 132)",
+//         data: sp3,
+//       },
+//     ],
+//   };
 
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config)
-});
+//   const config = {
+//     type: "line",
+//     data: data,
+//     options: {},
+//   };
+
+//   var myChart = new Chart(
+//     document.getElementById('myChart'),
+//     config)
+// });
 
