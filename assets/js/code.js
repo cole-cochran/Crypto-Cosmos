@@ -1,11 +1,19 @@
-var userChoice1=$('#user-choice');
+
+//var userChoice1=$('#user-choice');
+
 var userChoice2=$('#user-choice2');
+
 var submit=$('#submit');
+
 var userInputCoin=$('');
+
 var userInputPriceCo=$('');
+
 var userInputPriceCurr=$('');
-var userInputCoinGr=$('');
-var userInputCurr=$('');
+
+var userInputCoinGr=$('#user-choice1').val()
+
+var userInputCurr=$('#user-choice').val()
 
 //--VAN,GECKO DIFFERS API EX FOR EXCHANGE COINS FOR COINS+ID
 var geckoEx= 'https://api.coingecko.com/api/v3/exchange_rates';
@@ -35,7 +43,6 @@ var geckoETH= geckoBase + 'coins/ethereum'
 var geckoEx = geckoBase + 'exchange_rates'
 
 var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
-
 var geckoMarkToUs = geckoBase +'/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
 var geckoCateg= geckoBase + 'coins/categories'
@@ -93,6 +100,10 @@ var sparkLineAxie=[];
 console.log('/////////AXIE//MARKET CAP SPARKLINE////////////\n-------------');
 console.log(sparkLineAxie);
 
+var sparkLineBi=[];
+console.log('/////////BINANCE  MARKET CAP SPARKLINE////////////\n-------------');
+console.log(sparkLineBi);
+
 
 var sparkLineWall=[];
 console.log('/////////WALL-STREET-GAMING MARKET CAP SPARKLINE////////////\n-------------');
@@ -106,14 +117,32 @@ console.log(exchangeRates);
 var exchangeRatesVan=[];
 console.log('////////////EXCHANGE RATES VS USD API VAN////////////\n-------------');
 console.log(exchangeRatesVan);
+
+submit.on('click', function searcher(userInputCurr,userInputCoinGr){
+var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+
+$.ajax({
+    url: geckoMarkGraphBase,
+    method: 'GET',
+}).then(function (response) {
+    console.log( response + '\n-------------');
+     userInputCurr=$(userInputCurr).val(),
+     userInputCoinGr=$(userInputCoinGr).val(),
+    //var rp1 = response.rates
+   //exchangeRates.push(rp1)
+
+   searcher(userInputCurr,userInputCoinGr)
+   
+});
+})
+///HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
 /*
-HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
 var exQuery= function exchange(){
     var vanEx1 = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency='
     var vanEx2 ='&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
 
     $.ajax({
-        url: vanEx1 + userChoice1 + vanEx2 ,
+        url: geckoMarkGraphBase,
         method: 'GET',
     }).then(function (response) {
         console.log('EXCHANGE RATES \n-------------');
@@ -129,7 +158,7 @@ var exQuery= function exchange(){
         
     })
     })
-    
+
 }
 */
 $.ajax({
@@ -165,6 +194,18 @@ $.ajax({
    exchangeRates.push(rp1)
 });
 
+$.ajax({
+    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin&order=market_cap_desc&per_page=100&page=1&sparkline=true',
+     method: 'GET',
+ }).then(function (response) {
+ 
+     //console.log(response)
+     var sp1=response[0]
+     var sp2=sp1.sparkline_in_7d
+     var sp3=sp2.price 
+     //console.log(sp3)
+    sparkLineBi.push(sp3)
+ });
 
 $.ajax({
     url: geckoCoins + 'list' ,
@@ -172,6 +213,7 @@ $.ajax({
 }).then(function (response) {
    coins.push(response)
 });
+
 $.ajax({
    url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum&order=market_cap_desc&per_page=100&page=1&sparkline=true',
     method: 'GET',
@@ -180,15 +222,14 @@ $.ajax({
     var sp1=response[0]
     var sp2=sp1.sparkline_in_7d
     var sp3=sp2.price 
-    
    sparkLineE.push(sp3)
 });
+
 $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=shiba-inu&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -200,8 +241,7 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=wall-street-games&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -213,8 +253,7 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=unmarshal&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -227,8 +266,7 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids= axie-infinity&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -239,8 +277,7 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=smooth-love-potion&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -248,12 +285,12 @@ $.ajax({
     sparkLineL.push(sp3)
  });
 
+
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ufo-gaming&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
+    //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
@@ -300,7 +337,7 @@ $.ajax({
       label: 'My First dataset',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [sp3]
+      data: sp3
     }]
   };
   
@@ -313,10 +350,5 @@ const config = {
     document.getElementById('myChart'),
     config)
 });
-
-
-
-
-
 
 
