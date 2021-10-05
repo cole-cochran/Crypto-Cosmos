@@ -263,7 +263,7 @@ $.ajax({
   var sp3 = sp2.price;
   //console.log(sp3)
   sparkLineBi.push(sp3);
-  /* const labels = [
+   const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -272,7 +272,7 @@ $.ajax({
         'saturday',
         'sunday',
         ////////
-        '1:00pm',
+       /* '1:00pm',
         '2:00pm',
         '3:00pm',
         '4:00pm',
@@ -295,7 +295,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -315,7 +315,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartBi'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -333,7 +333,7 @@ $.ajax({
   var sp2 = sp1.sparkline_in_7d;
   var sp3 = sp2.price;
   sparkLineE.push(sp3);
-  /* const labels = [
+  const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -341,7 +341,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+        /* '1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -364,7 +364,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -384,7 +384,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartEth'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -397,7 +397,7 @@ $.ajax({
   var sp3 = sp2.price;
   //console.log(sp3)
   sparkLineS.push(sp3);
-  /* const labels = [
+   const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -405,7 +405,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+        /*'1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -428,7 +428,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00pm',
+        '12:00pm',*/
       ];
       
       var data = {
@@ -448,7 +448,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartShib'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -461,7 +461,7 @@ $.ajax({
   var sp3 = sp2.price;
   //console.log(sp3)
   sparkLineWall.push(sp3);
-  /* const labels = [
+  const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -470,7 +470,7 @@ $.ajax({
         'saturday',
         'sunday',
         ////////
-        '1:00am',
+        /* '1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -493,7 +493,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -513,7 +513,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartWall'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -525,8 +525,8 @@ $.ajax({
   var sp2 = sp1.sparkline_in_7d;
   var sp3 = sp2.price;
   //console.log(sp3)
-  sparkLineUnM.push(sp3);
-  /* const labels = [
+  //sparkLineUnM.push(sp3);
+   const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -534,7 +534,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+       /* '1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -557,7 +557,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -577,7 +577,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartUnMar'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -589,8 +589,8 @@ $.ajax({
   var sp2 = sp1.sparkline_in_7d;
   var sp3 = sp2.price;
   //console.log(sp3)
-  sparkLineAxie.push(sp3);
-  /* const labels = [
+  //sparkLineAxie.push(sp3);
+   const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -598,7 +598,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+        /*'1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -621,7 +621,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -641,7 +641,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartAx'),
-        config)*/
+        config)
  });
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=smooth-love-potion&order=market_cap_desc&per_page=100&page=1&sparkline=true',
@@ -653,7 +653,7 @@ $.ajax({
      var sp3=sp2.price 
      //console.log(sp3)
     //sparkLineL.push(sp3)
-   /* const labels = [
+    const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -661,7 +661,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+        /*'1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -684,7 +684,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -704,7 +704,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartSmo'),
-        config)*/
+        config)
 });
 
 $.ajax({
@@ -716,8 +716,8 @@ $.ajax({
   var sp2 = sp1.sparkline_in_7d;
   var sp3 = sp2.price;
   //console.log(sp3)
-  sparkLineUfo.push(sp3);
-  /* const labels = [
+  //sparkLineUfo.push(sp3);
+   const labels = [
         'monday',
         'Tuesday',
         'wednesday',
@@ -725,7 +725,7 @@ $.ajax({
         'friday',
         'saturday',
         'sunday',
-        '1:00am',
+        /*'1:00am',
         '2:00am',
         '3:00am',
         '4:00am',
@@ -748,7 +748,7 @@ $.ajax({
         '9:00pm',
         '10:00pm',
         '11:00pm',
-        '12:00am',
+        '12:00am',*/
       ];
       
       var data = {
@@ -768,7 +768,7 @@ $.ajax({
       };
       var myChart = new Chart(
         document.getElementById('myChartUfo'),
-        config)*/
+        config)
 });
 $.ajax({
   url: vanEXS,
@@ -793,9 +793,9 @@ $.ajax({
   //console.log(sp2)
   sparkline.push(sp2);
   var sp3 = sp2.price;
-  //console.log(sp3)
+  console.log(sp3)
   //data.datasets.push(sp3)
-  const labels = [
+ /* const labels = [
     "monday",
     "Tuesday",
     "wednesday",
@@ -804,8 +804,8 @@ $.ajax({
     "saturday",
     "sunday",
   ];
-
-  var data = {
+*/
+ /* var data = {
     labels: labels,
     datasets: [
       {
@@ -816,11 +816,11 @@ $.ajax({
       },
     ],
   };
-
-  const config = {
-    type: "line",
-    data: data,
-    options: {},
-  };
-  var myChart = new Chart(document.getElementById("myChart"), config);
+*/
+ // const config = {
+  //  type: "line",
+   // data: data,
+   // options: {},
+ // };
+ // var myChart = new Chart(document.getElementById("myChart"), config);
 });
