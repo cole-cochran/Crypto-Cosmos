@@ -14,8 +14,8 @@ var userInputPriceCurr = $("");
 var userInputCoinGr = $("#user-choice1");
 console.log(userInputCoinGr);
 
-// var userInputCurr = $("#user-choice");
-// console.log(userInputCurr);
+var userInputCurr = $("#user-choice");
+console.log(userInputCurr);
 
 //--VAN,GECKO DIFFERS API EX FOR EXCHANGE COINS FOR COINS+ID
 var geckoEx = "https://api.coingecko.com/api/v3/exchange_rates";
