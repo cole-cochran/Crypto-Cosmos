@@ -1,3 +1,4 @@
+
 //var userChoice1=$('#user-choice');
 
 //var userChoice2=$('#user-choice2');
@@ -235,7 +236,7 @@ function search(){
     url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
     ,
     method: 'GET',
-    console.log(a)
+
 //}).then(function (response) {
     //console.log('EXCHANGE RATES \n-------------');
    // var rp1 = response.rates
@@ -816,11 +817,15 @@ $.ajax({
       },
     ],
   };
-*/
- // const config = {
-  //  type: "line",
-   // data: data,
-   // options: {},
- // };
- // var myChart = new Chart(document.getElementById("myChart"), config);
+
+  const config = {
+    type: "line",
+    data: data,
+    options: {},
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config)
 });
+
