@@ -183,31 +183,28 @@ $.ajax({
   topTrendPic.push(thb, thb2, thb3, thb4, thb5, thb6, thb7);
   topTrend.push(rp2, rp3, rp4, rp5, rp6, rp7, rp8);
 });
-submit.on("click", search());
-function search() {
-  var userInputCurr = $("#user-choice").text();
-  console.log(userInputCurr);
-  var userInputCoinGr = $("#user-choice1").val();
-  console.log(userInputCoinGr);
-}
-(function () {
-  var a = $.ajax({
-    url:
-      geckoCoins +
-      "markets?vs_currency=" +
-      userInputCurr +
-      "&ids=" +
-      userInputCoinGr +
-      "&order=market_cap_desc&per_page=100&page=1&sparkline=true",
-    method: "GET",
-    //}).then(function (response) {
-    //console.log('EXCHANGE RATES \n-------------');
-    // var rp1 = response.rates
-    //exchangeRates.push(rp1)
-    //console.log(search)
-  });
-});
 
+/*
+submit.on('click',search())
+function search(){
+   var userInputCurr= $('#user-choice').text()
+   console.log(userInputCurr)
+   var userInputCoinGr= $('#user-choice1').val()
+   console.log(userInputCoinGr)
+}(function(){
+ var a=$.ajax({
+    url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    ,
+    method: 'GET',
+    console.log(a)
+//}).then(function (response) {
+    //console.log('EXCHANGE RATES \n-------------');
+   // var rp1 = response.rates
+   //exchangeRates.push(rp1)
+   //console.log(search)
+})}
+)
+*/
 $.ajax({
   url: geckoEx,
   method: "GET",
