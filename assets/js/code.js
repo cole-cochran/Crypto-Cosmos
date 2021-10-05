@@ -14,8 +14,8 @@ var userInputPriceCurr = $("");
 var userInputCoinGr = $("#user-choice1");
 console.log(userInputCoinGr);
 
-var userInputCurr = $("#user-choice");
-console.log(userInputCurr);
+// var userInputCurr = $("#user-choice");
+// console.log(userInputCurr);
 
 //--VAN,GECKO DIFFERS API EX FOR EXCHANGE COINS FOR COINS+ID
 var geckoEx = "https://api.coingecko.com/api/v3/exchange_rates";
@@ -82,23 +82,20 @@ var geckoCoinPriceSearch1 =
 var geckoUrSimpleP =
   "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,shiba-inu&vs_currencies=uah,usd";
 
-/**
- * 
- * 
-var getLocSearch = function(userInputCurr, userInputCoinGr) {
-    var locApiUrl = geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+  var getLocSearch = function(userInputCoinGr) {
+    var locApiUrl = geckoCoins + 'markets?vs_currency=usd&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
     fetch(locApiUrl)
         .then(function(response) {
             if (response.ok) {
                 response.json().then(function(data) {
-                    displayResults(data, );
+                    displayResults(data,userInputCoinGr);
                 });
             } else {
                 alert('Error: ' + response.statusText);
             }
         })
         .catch(function(error) {
-            alert("Can't connect to the Library of Congress");
+            alert("Can't connect to the Lords Prayer");
             console.log(error);
         });
 };
@@ -111,16 +108,20 @@ var displayResults = function(data, query) {
         console.log(data);
         displaySearch.textContent = `${query}`;
         // loop through the data and display the results;
-        return;
-    }
-  // Or with jQuery
+       }   return;
+    } 
+    submit.on('click', function(event) {
+    event.preventDefault();
+    var userInputCoinGr = $(userInputCoinGr).val();
+    getLocSearch(UserInputCoinGr);
+});
 
   $(document).ready(function(){
     $('select').formSelect();
 
 
-  }); */
-
+  });
+  console.log(getLocSearch);
 
 
 var topTrend = [];
