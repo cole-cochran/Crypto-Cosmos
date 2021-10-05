@@ -326,67 +326,67 @@ $.ajax({
   coins.push(response);
 });
 
-$.ajax({
-  url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum&order=market_cap_desc&per_page=100&page=1&sparkline=true",
-  method: "GET",
-}).then(function (response) {
-  var sp1 = response[0];
-  var sp2 = sp1.sparkline_in_7d;
-  var sp3 = sp2.price;
-  sparkLineE.push(sp3);
-  const labels = [
-        'monday',
-        'Tuesday',
-        'wednesday',
-        'thursday',
-        'friday',
-        'saturday',
-        'sunday',
-        /* '1:00am',
-        '2:00am',
-        '3:00am',
-        '4:00am',
-        '5:00am',
-        '6:00am',
-        '7:00am',
-        '8:00am',
-        '9:00am',
-        '10:00am',
-        '11:00am',
-        '12:00pm',
-        '1:00pm',
-        '2:00pm',
-        '3:00pm',
-        '4:00pm',
-        '5:00pm',
-        '6:00pm,
-        '7:00pm',
-        '8:00pm',
-        '9:00pm',
-        '10:00pm',
-        '11:00pm',
-        '12:00am',*/
-      ];
+// $.ajax({
+//   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=ethereum&order=market_cap_desc&per_page=100&page=1&sparkline=true",
+//   method: "GET",
+// }).then(function (response) {
+//   var sp1 = response[0];
+//   var sp2 = sp1.sparkline_in_7d;
+//   var sp3 = sp2.price;
+//   sparkLineE.push(sp3);
+//   const labels = [
+//         'monday',
+//         'Tuesday',
+//         'wednesday',
+//         'thursday',
+//         'friday',
+//         'saturday',
+//         'sunday',
+//         /* '1:00am',
+//         '2:00am',
+//         '3:00am',
+//         '4:00am',
+//         '5:00am',
+//         '6:00am',
+//         '7:00am',
+//         '8:00am',
+//         '9:00am',
+//         '10:00am',
+//         '11:00am',
+//         '12:00pm',
+//         '1:00pm',
+//         '2:00pm',
+//         '3:00pm',
+//         '4:00pm',
+//         '5:00pm',
+//         '6:00pm,
+//         '7:00pm',
+//         '8:00pm',
+//         '9:00pm',
+//         '10:00pm',
+//         '11:00pm',
+//         '12:00am',*/
+//       ];
       
-      var data = {
-        labels: labels,
-        datasets: [{
-          label: 'Ethereum Market Chart',
-          backgroundColor: 'rgb(255, 99, 132)',
-          borderColor: 'rgb(255, 99, 132)',
-          data: sp3
-        }]
-      };
+//       var data = {
+//         labels: labels,
+//         datasets: [{
+//           label: 'Ethereum Market Chart',
+//           backgroundColor: 'rgb(255, 99, 132)',
+//           borderColor: 'rgb(255, 99, 132)',
+//           data: sp3
+//         }]
+//       };
       
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-      };
-      var myChart = new Chart(
-        document.getElementById('myChartEth'),
-        config)
-});
+//     const config = {
+//         type: 'line',
+//         data: data,
+//         options: {}
+//       };
+//       var myChart = new Chart(
+//         document.getElementById('myChartEth'),
+//         config)
+// });
 
 $.ajax({
   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=shiba-inu&order=market_cap_desc&per_page=100&page=1&sparkline=true",
@@ -796,36 +796,36 @@ $.ajax({
   var sp3 = sp2.price;
   console.log(sp3)
   //data.datasets.push(sp3)
-//  const labels = [
-//     "monday",
-//     "Tuesday",
-//     "wednesday",
-//     "thursday",
-//     "friday",
-//     "saturday",
-//     "sunday",
-//   ];
+ const labels = [
+    "monday",
+    "Tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+  ];
 
-//   var data = {
-//     labels: labels,
-//     datasets: [
-//       {
-//         label: "Bitcoin Market Cap Chart",
-//         backgroundColor: "rgb(255, 99, 132)",
-//         borderColor: "rgb(255, 99, 132)",
-//         data: sp3,
-//       },
-//     ],
-//   };
+  var data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Bitcoin Market Cap Chart",
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgb(255, 99, 132)",
+        data: sp3,
+      },
+    ],
+  };
 
-//   const config = {
-//     type: "line",
-//     data: data,
-//     options: {},
-//   };
+  const config = {
+    type: "line",
+    data: data,
+    options: {},
+  };
 
-//   var myChart = new Chart(
-//     document.getElementById('myChart'),
-//     config)
-// });
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config)
+});
 
