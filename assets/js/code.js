@@ -34,6 +34,10 @@ var vanEx3='&apikey=OMI2ERRUQEZP3AQO';
 //BASES FOR GECKO ....
 var geckoBase='https://api.coingecko.com/api/v3/'
 
+var BlockChList=geckoBase + 'asset_platforms'
+
+var CoinStatus= geckoCoins + userInputCoin + 'status_updates'
+
 var geckoSearchBase = geckoBase + 'search/'
 
 var geckoCoins= geckoBase +'coins/'
@@ -149,6 +153,25 @@ $.ajax({
     topTrendPic.push(thb,thb2,thb3,thb4,thb5,thb6,thb7)
     topTrend.push(rp2,rp3,rp4,rp5,rp6,rp7,rp8)   
 });
+submit.on('click',search())
+function search(){
+   var userInputCurr= $('#user-choice').text()
+   console.log(userInputCurr)
+   var userInputCoinGr= $('#user-choice1').val()
+   console.log(userInputCoinGr)
+}(function(){
+ var a=$.ajax({
+    url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    ,
+    method: 'GET',
+    console.log(a)
+//}).then(function (response) {
+    //console.log('EXCHANGE RATES \n-------------');
+   // var rp1 = response.rates
+   //exchangeRates.push(rp1)
+   //console.log(search)
+})}
+)
 
 $.ajax({
     url: geckoEx ,
@@ -170,18 +193,44 @@ $.ajax({
     //console.log(sp3)
     sparkLineBi.push(sp3)
     /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        ////////
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Binance Market Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -214,18 +263,43 @@ $.ajax({
     var sp3=sp2.price 
     sparkLineE.push(sp3)
     /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Ethereum Market Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -253,18 +327,43 @@ $.ajax({
      //console.log(sp3)
      sparkLineS.push(sp3)
      /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00pm',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Shiba-Inu Market Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -292,18 +391,44 @@ $.ajax({
      //console.log(sp3)
     sparkLineWall.push(sp3)
     /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        ////////
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Wall-Street-Games Market Cap',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -331,18 +456,43 @@ $.ajax({
      //console.log(sp3)
     sparkLineUnM.push(sp3)
     /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'UnMarshal Market Cap Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -370,18 +520,43 @@ $.ajax({
      //console.log(sp3)
     sparkLineAxie.push(sp3)
     /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Axie Market Cap Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -408,18 +583,43 @@ $.ajax({
      //console.log(sp3)
     sparkLineL.push(sp3)
    /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Smooth-Love-Potion Market Cap Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -447,18 +647,43 @@ $.ajax({
      //console.log(sp3)
     sparkLineUfo.push(sp3)
    /* const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
+        'monday',
+        'Tuesday',
+        'wednesday',
+        'thursday',
+        'friday',
+        'saturday',
+        'sunday',
+        '1:00am',
+        '2:00am',
+        '3:00am',
+        '4:00am',
+        '5:00am',
+        '6:00am',
+        '7:00am',
+        '8:00am',
+        '9:00am',
+        '10:00am',
+        '11:00am',
+        '12:00pm',
+        '1:00pm',
+        '2:00pm',
+        '3:00pm',
+        '4:00pm',
+        '5:00pm',
+        '6:00pm,
+        '7:00pm',
+        '8:00pm',
+        '9:00pm',
+        '10:00pm',
+        '11:00pm',
+        '12:00am',
       ];
       
       var data = {
         labels: labels,
         datasets: [{
-          label: 'My First dataset',
+          label: 'Ufo-Gaming-Market Cap Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
           data: sp3
@@ -498,18 +723,19 @@ $.ajax({
     //console.log(sp3)
    //data.datasets.push(sp3)
    const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
+    'monday',
+    'Tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+    'sunday',
   ];
   
   var data = {
     labels: labels,
     datasets: [{
-      label: 'My First dataset',
+      label: 'Bitcoin Market Cap Chart',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
       data: sp3
