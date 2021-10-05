@@ -79,7 +79,7 @@ console.log(topTrendPic);
 var coins=[] ;
 console.log('////////////ALL COINS////////////\n-------------')//FOR SEARCH
 console.log(coins);
-/**
+/*
  SEARCH FUNCTION FOR ALL COINS HERE
  */
 
@@ -582,7 +582,7 @@ $.ajax({
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
      //console.log(sp3)
-    sparkLineL.push(sp3)
+    //sparkLineL.push(sp3)
    /* const labels = [
         'monday',
         'Tuesday',
