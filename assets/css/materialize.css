@@ -984,7 +984,7 @@
 }
 
 .teal-text {
-  color: #009688 !important;
+  color: #52F2D5 !important;
 }
 
 .teal.lighten-5 {
@@ -1008,7 +1008,7 @@
 }
 
 .teal-text.text-lighten-3 {
-  color: #80cbc4 !important;
+  color: #52F2D5 !important;
 }
 
 .teal.lighten-2 {
@@ -1016,7 +1016,7 @@
 }
 
 .teal-text.text-lighten-2 {
-  color: #4db6ac !important;
+  color: #52F2D5 !important;
 }
 
 .teal.lighten-1 {
@@ -4542,6 +4542,7 @@ h4 {
   font-size: 2.28rem;
   line-height: 110%;
   margin: 1.52rem 0 0.912rem 0;
+  color: #1fbf92;
 }
 
 h5 {
