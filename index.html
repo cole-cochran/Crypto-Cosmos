@@ -73,9 +73,34 @@
 
     <div class="row">
       <div class="col s4">
-        <!--   Icon Section   -->
+
+        <!-- div for crypto dashboard -->
         <div class="crypto-graph">
           <canvas id="myChart"></canvas>
+        </div>-->
+        <div class="crypto-graph">
+          <canvas id="myChartBi"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartEth"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartShib"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartWall"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartUnMar"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartAx"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartSmo"></canvas>
+        </div>
+        <div class="crypto-graph">
+          <canvas id="myChartUfo"></canvas>
         </div>
       </div>
     </div>
@@ -83,9 +108,20 @@
     <div class="container">
       <div class="section">
         <div class="row">
-          <div class="col s12 center">
+          <div class="col s12 center" id="news">
+            <!-- div for search input field to find other crypto currency id="user-choice" -->
+            <div class="user-choice input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+              <label>Compare Crypto Currency's</label>
+            </div>
             <h3><i class="mdi-content-send brown-text"></i></h3>
             <h4>Crypto News</h4>
+            <!-- div for news API -->
             <p class="left-align light">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               scelerisque id nunc nec volutpat. Etiam pellentesque tristique
@@ -97,15 +133,16 @@
               odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget
               dignissim mauris, non tristique erat. Vestibulum ante ipsum primis
               in faucibus orci luctus et ultrices posuere cubilia Curae;
-              <div class="input-field col s12">
-                <select multiple>
-                  <option value="" disabled selected>Choose your option</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                </select>
-                <label>Compare Crypto Currency's</label>
-              </div>
+            </p>
+            <!-- div for search input field to find other crypto currency id="user-choice" -->
+            <div class="user-choice input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -114,13 +151,14 @@
     <div class="parallax-container valign-wrapper">
       <div class="section no-pad-bot">
         <div class="container">
-          <div class="row center">
-           
-          </div>
+          <div class="row center"></div>
         </div>
       </div>
       <div class="parallax">
-        <img src="./assets/images/background3.jpg" alt="Unsplashed background img 3" />
+        <img
+          src="./assets/images/background3.jpg"
+          alt="Unsplashed background img 3"
+        />
       </div>
     </div>
 
@@ -130,7 +168,8 @@
           <div class="col l6 s12">
             <h5 class="teal-text">Team Bio</h5>
             <p class="grey-text text-lighten-4">
-              We are a team of Bootcamp students working on this project to build our professional web portfolio. 
+              We are a team of Bootcamp students working on this project to
+              build our professional web portfolio.
             </p>
           </div>
           <div class="col l3 s12">
@@ -145,11 +184,18 @@
           <div class="col l3 s12">
             <h5 class="teal-text">Connect</h5>
             <ul>
-              <li><a class="white-text" href="https://github.com/cole-cochran" target="_blank">Cole's Github</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
+              <li>
+                <a
+                  class="white-text"
+                  href="https://github.com/cole-cochran"
+                  target="_blank"
+                  >Cole's Github</a
+                >
+              </li>
+              <li><a class="white-text" href="#!">Nathan's Github</a></li>
+              <li><a class="white-text" href="#!">Ismeny's Github</a></li>
+              <li><a class="white-text" href="#!">Emilio's Github</a></li>
+              <li><a class="white-text" href="#!">Brian's Github</a></li>
             </ul>
           </div>
         </div>
@@ -158,34 +204,27 @@
       <div class="footer-copyright">
         <div class="container">
           Made by
-          <a class="teal-text text-lighten-3" href="https://github.com/cole-cochran/crypto-cosmos" target="_blank"
-            >Cole, Nathan, Emilio, Ismeny, and Brian</a>
+          <a
+            class="teal-text text-lighten-3"
+            href="https://github.com/cole-cochran/crypto-cosmos"
+            target="_blank"
+            >Cole, Nathan, Emilio, Ismeny, and Brian</a
+          >
         </div>
       </div>
     </footer>
   </body>
-  <!-- div for search input field to find other crypto currency id="user-choice" -->
-  <!-- div for crypto dashboard -->
-  <!-- div for news API -->
 
-      <!-- div for search input field to find other crypto currency id="user-choice" -->
-      <!-- div for crypto dashboard -->
-      <!-- div for news API -->
-
-      <!--JavaScript at end of body for optimized loading-->
-      
-      
-     
-      
-
-    <!--  Scripts--> 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!--JavaScript at end of body for optimized loading-->
   <!--  Scripts-->
+
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="./assets/js/materialize.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="./assets/js/init.js"></script>
+  <!-- placeholder for scripts to pull apis -->
   <script src="./assets/js/code.js"></script>
+  <script src="./assets/js/script.js"></script>
 
   <!-- placeholder for script to pull apis -->
   <!-- placeholder for footer element from Materialize -->
