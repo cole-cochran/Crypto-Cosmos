@@ -153,6 +153,7 @@ $.ajax({
     topTrendPic.push(thb,thb2,thb3,thb4,thb5,thb6,thb7)
     topTrend.push(rp2,rp3,rp4,rp5,rp6,rp7,rp8)   
 });
+/*
 submit.on('click',search())
 function search(){
    var userInputCurr= $('#user-choice').text()
@@ -172,7 +173,7 @@ function search(){
    //console.log(search)
 })}
 )
-
+*/
 $.ajax({
     url: geckoEx ,
     method: 'GET',
