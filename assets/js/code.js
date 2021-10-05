@@ -1,6 +1,6 @@
 //var userChoice1=$('#user-choice');
 
-var userChoice2=$('#user-choice2');
+//var userChoice2=$('#user-choice2');
 
 var submit=$('#submit');
 
@@ -10,9 +10,11 @@ var userInputPriceCo=$('');
 
 var userInputPriceCurr=$('');
 
-var userInputCoinGr=$('#user-choice1').val()
+var userInputCoinGr=$('#user-choice1')
+console.log(userInputCoinGr)
 
-var userInputCurr=$('#user-choice').val()
+var userInputCurr=$('#user-choice')
+console.log(userInputCurr)
 
 //--VAN,GECKO DIFFERS API EX FOR EXCHANGE COINS FOR COINS+ID
 var geckoEx= 'https://api.coingecko.com/api/v3/exchange_rates';
@@ -26,7 +28,8 @@ var vanEX = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&f
 //FUNCTION IS CURR AT LINE 51
 var vanEx1 = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency='
 
-var vanEx2 ='&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
+var vanEx2 ='&to_currency=' 
+var vanEx3='&apikey=OMI2ERRUQEZP3AQO';
 
 //BASES FOR GECKO ....
 var geckoBase='https://api.coingecko.com/api/v3/'
@@ -43,7 +46,7 @@ var geckoETH= geckoBase + 'coins/ethereum'
 
 var geckoEx = geckoBase + 'exchange_rates'
 
-var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+userInputCurr+'&ids='+userInputCoinGr+'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
 
 var geckoMarkToUs = geckoBase +'/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
@@ -56,7 +59,7 @@ var geckoCoinPriceSearch1 = geckoCoinPriceBase + 'ids='+ userInputPriceCo +'&vsc
 //GOOD FOR THE MAIN PAGE SHOWS GENERAL INFORMATION RELATIVE GLOBALLY 
 //'https://api.coingecko.com/api/v3/global'
 
-var geckoUrSimpleP='https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,doge&vs_currencies=uah,usd'
+var geckoUrSimpleP='https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,shiba-inu&vs_currencies=uah,usd'
 
 var geckoUrSimpleTP='https://api.coingecko.com/api/v3/'
 
@@ -72,6 +75,10 @@ console.log(topTrendPic);
 var coins=[] ;
 console.log('////////////ALL COINS////////////\n-------------')//FOR SEARCH
 console.log(coins);
+/**
+ SEARCH FUNCTION FOR ALL COINS HERE
+ */
+
 
 var sparkline=[] ;
 console.log('////////////SPARKLINE RAW FOR BIT////////////\n-------------');
@@ -118,47 +125,8 @@ var exchangeRatesVan=[];
 console.log('////////////EXCHANGE RATES VS USD API VAN////////////\n-------------');
 console.log(exchangeRatesVan);
 
-submit.on('click', function searcher(userInputCurr,userInputCoinGr){
-var geckoMarkGraphBase = geckoCoins + 'markets?vs_currency=' + userInputCurr + '&ids=' + userInputCoinGr + '&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+//https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1
 
-$.ajax({
-    url: geckoMarkGraphBase,
-    method: 'GET',
-}).then(function (response) {
-    console.log( response + '\n-------------');
-     userInputCurr=$(userInputCurr).val(),
-     userInputCoinGr=$(userInputCoinGr).val(),
-    //var rp1 = response.rates
-    //exchangeRates.push(rp1)
-
-   searcher(userInputCurr , userInputCoinGr)
-
-});
-})
-///HAVING TROUBLE GETTING THIS TO WORK WITH THE AJAX REQUEST WORKS WITH FETCH() /////ANOTHER CORS ISSUE
-/*
-var exQuery= function exchange(){
-    var vanEx1 = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency='
-    var vanEx2 ='&to_currency=USD&apikey=OMI2ERRUQEZP3AQO';
-
-    $.ajax({
-        url: geckoMarkGraphBase,
-        method: 'GET',
-    }).then(function (response) {
-        //console.log('EXCHANGE RATES \n-------------');
-        console.log(response);
-        submit.on("click", function(event) {
-        event.preventDefault();
-        userChoice1=$(userChoice1).val()
-        
-        
-      
-     exQuery(userChoice1)
-        
-    })
-    })
-}
-*/
 $.ajax({
     url: 'https://api.coingecko.com/api/v3/search/trending' ,
     method: 'GET',
@@ -195,13 +163,39 @@ $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=binancecoin&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
  }).then(function (response) {
- 
-     //console.log(response)
-     var sp1=response[0]
-     var sp2=sp1.sparkline_in_7d
-     var sp3=sp2.price 
-     //console.log(sp3)
-     sparkLineBi.push(sp3)
+    //console.log(response)
+    var sp1=response[0]
+    var sp2=sp1.sparkline_in_7d
+    var sp3=sp2.price
+    //console.log(sp3)
+    sparkLineBi.push(sp3)
+    /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartBi'),
+        config)*/
  });
 
 $.ajax({
@@ -219,6 +213,33 @@ $.ajax({
     var sp2=sp1.sparkline_in_7d
     var sp3=sp2.price 
     sparkLineE.push(sp3)
+    /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartEth'),
+        config)*/
 });
 
 $.ajax({
@@ -230,19 +251,73 @@ $.ajax({
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
      //console.log(sp3)
-    sparkLineS.push(sp3)
+     sparkLineS.push(sp3)
+     /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartShib'),
+        config)*/
  });
 
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=wall-street-games&order=market_cap_desc&per_page=100&page=1&sparkline=true',
      method: 'GET',
- }).then(function (response) {
+ }).then(function (response){
     //console.log(response)
      var sp1=response[0]
      var sp2=sp1.sparkline_in_7d
      var sp3=sp2.price 
      //console.log(sp3)
     sparkLineWall.push(sp3)
+    /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartWall'),
+        config)*/
  });
 
  $.ajax({
@@ -255,6 +330,33 @@ $.ajax({
      var sp3=sp2.price 
      //console.log(sp3)
     sparkLineUnM.push(sp3)
+    /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartUnMar'),
+        config)*/
  });
 
  $.ajax({
@@ -267,6 +369,33 @@ $.ajax({
      var sp3=sp2.price 
      //console.log(sp3)
     sparkLineAxie.push(sp3)
+    /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartAx'),
+        config)*/
  });
  $.ajax({
     url: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=smooth-love-potion&order=market_cap_desc&per_page=100&page=1&sparkline=true',
@@ -278,6 +407,33 @@ $.ajax({
      var sp3=sp2.price 
      //console.log(sp3)
     sparkLineL.push(sp3)
+   /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartSmo'),
+        config)*/
  });
 
  $.ajax({
@@ -290,6 +446,33 @@ $.ajax({
      var sp3=sp2.price 
      //console.log(sp3)
     sparkLineUfo.push(sp3)
+   /* const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+      ];
+      
+      var data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: sp3
+        }]
+      };
+      
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+      var myChart = new Chart(
+        document.getElementById('myChartUfo'),
+        config)*/
  });
  $.ajax({
     url: vanEXS ,
