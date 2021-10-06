@@ -59,10 +59,17 @@ body {
    font-size: 22px;
  }
 
- 
+ .select {
+   color: white;
+ }
 
+.option {
+  color: white;
+}
 
-
+.select-dropdown {
+  color: white;
+}
  
 
 
