@@ -4,14 +4,17 @@
 //var userChoice2=$('#user-choice2');
 
 var submit = $("#submit");
+var userInputCoin=$('')
 
-var userInputCoin = $("");
+var results1=[]
+
+var displaySearch = $("#dispy");
 
 var userInputPriceCo = $("");
 
 var userInputPriceCurr = $("");
 
-var userInputCoinGr = $("#user-choice1");
+var userInputCoinGr = $("#user-choice1")
 console.log(userInputCoinGr);
 
 var userInputCurr = $("#user-choice");
@@ -83,12 +86,15 @@ var geckoUrSimpleP =
   "https://api.coingecko.com/api/v3/simple/price?ids=ethereum,bitcoin,shiba-inu&vs_currencies=uah,usd";
 
   var getLocSearch = function(userInputCoinGr) {
-    var locApiUrl = geckoCoins + 'markets?vs_currency=usd&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    var coinGr=userInputCoinGr.val()
+
+    var locApiUrl = geckoCoins + 'markets?vs_currency=usd&ids='+ coinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
+    console.log(userInputCoinGr)
     fetch(locApiUrl)
         .then(function(response) {
             if (response.ok) {
                 response.json().then(function(data) {
-                    displayResults(data,userInputCoinGr);
+                    displayResults(data,coinGr)
                 });
             } else {
                 alert('Error: ' + response.statusText);
@@ -104,24 +110,26 @@ var displayResults = function(data, query) {
         displaySearch.textContent = 'No Data Found...';
         return;
     } else {
+      var sp1 = data[0];
+  var sp2 = sp1.sparkline_in_7d;
+  var sp3 = sp2.price;
+  console.log(sp3)
+
         console.log(query);
         console.log(data);
-        displaySearch.textContent = `${query}`;
-        // loop through the data and display the results;
+       
+        results1.push(sp3)
+        console.log(results1)
+        
        }   return;
     } 
     submit.on('click', function(event) {
     event.preventDefault();
-    var userInputCoinGr = $(userInputCoinGr).val();
-    getLocSearch(UserInputCoinGr);
-});
+    getLocSearch(userInputCoinGr)
+  
 
-  $(document).ready(function(){
-    $('select').formSelect();
-
-
-  });
-  console.log(getLocSearch);
+  })
+ 
 
 
 var topTrend = [];
@@ -237,7 +245,6 @@ function search(){
     url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
     ,
     method: 'GET',
-
 //}).then(function (response) {
     //console.log('EXCHANGE RATES \n-------------');
    // var rp1 = response.rates
@@ -301,8 +308,10 @@ $.ajax({
       ];
       
       var data = {
+
         labels: labels,
         datasets: [{
+          
           label: 'Binance Market Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
@@ -783,48 +792,49 @@ $.ajax({
   exchangeRatesVan.push(response);
 });
 
-$.ajax({
-  url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
-  method: "GET",
-}).then(function (response) {
-  console.log(
-    "BITCOIN MARKET CAP////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------"
-  );
-  var sp1 = response[0];
-  var sp2 = sp1.sparkline_in_7d;
-  //console.log(sp2)
-  sparkline.push(sp2);
-  var sp3 = sp2.price;
-  console.log(sp3)
-  //data.datasets.push(sp3)
- const labels = [
-    "monday",
-    "Tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturdaygit pu",
-    "sunday",
-  ];
+// $.ajax({
+//   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
+//   method: "GET",
+// }).then(function (response) {
+//   console.log(
+//     "BITCOIN MARKET CAP////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------"
+//   );
+//   var sp1 = response[0];
+//   var sp2 = sp1.sparkline_in_7d;
+//   //console.log(sp2)
+//   sparkline.push(sp2);
+//   var sp3 = sp2.price;
+//   console.log(sp3)
+//   //data.datasets.push(sp3)
+//  const labels = [
+//     "monday",
+//     "Tuesday",
+//     "wednesday",
+//     "thursday",
+//     "friday",
+//     "saturday",
+//     "sunday",
+//   ];
 
-  var data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "Bitcoin Market Cap Chart",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: sp3,
-      },
-    ],
-  };
+//   var data = {
+//     labels: labels,
+//     datasets: [
+//       {
+//         label: "Bitcoin Market Cap Chart",
+//         backgroundColor: "rgb(255, 99, 132)",
+//         borderColor: "rgb(255, 99, 132)",
+//         data: sp3,
+//       },
+//     ],
+//   };
 
-  const config = {
-    type: "line",
-    data: data,
-    options: {},
-  };
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config)
-});
+//   const config = {
+//     type: "line",
+//     data: data,
+//     options: {},
+//   };
+
+//   var myChart = new Chart(
+//     document.getElementById('myChart'),
+//     config)
+// });
