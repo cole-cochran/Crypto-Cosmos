@@ -245,7 +245,6 @@ function search(){
     url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
     ,
     method: 'GET',
-
 //}).then(function (response) {
     //console.log('EXCHANGE RATES \n-------------');
    // var rp1 = response.rates
@@ -839,4 +838,3 @@ $.ajax({
 //     document.getElementById('myChart'),
 //     config)
 // });
-
