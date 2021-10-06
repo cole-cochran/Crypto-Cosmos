@@ -21,7 +21,7 @@ function newsApiCall() {
       var newsName = response.name;
       var newsDescription = response.description;
       var newsUrl = response.url;
-      var thumbnailUrl = reposnse.image.thumbnail.contentUrl;
+      var thumbnailUrl = response.image.thumbnail.contentUrl;
 
       var newsImageEl = $("<img>");
       newsImageEl.img(newsImageUrl);
