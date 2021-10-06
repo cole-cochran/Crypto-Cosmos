@@ -1,5 +1,7 @@
 body {
     font-family: 'Kanit';
+    background: rgb(13,13,13);
+    background: linear-gradient(90deg, rgba(13,13,13,1) 0%, rgba(45,91,69,0.7875525210084033) 100%);
 }
 
  nav ul a,
@@ -16,6 +18,7 @@ body {
  }
  
  .parallax-container {
+   padding-bottom: 400px;
    min-height: 380px;
    line-height: 0;
    height: auto;
@@ -50,6 +53,10 @@ body {
  
  footer.page-footer {
    margin: 0;
+ }
+
+ #label {
+   font-size: 22px;
  }
 
  
