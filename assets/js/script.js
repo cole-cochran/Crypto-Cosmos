@@ -1,43 +1,43 @@
 // this is for the news api
+
+
+
+$(document).ready(function () {
+
+newsApiCall();
+
 function newsApiCall() {
   var apiUrl =
-    "https://newsapi.org/v2/everything?q=bitcoin&apiKey=eff4a3ad5b8949c59ef052cc5fe84836";
+    "https://api.bing.microsoft.com/v7.0/news/search?q=bitcoin&count=6&sortby=date";
 
   $.ajax({
     url: apiUrl,
-    method: "get",
+    headers: { 'Ocp-Apim-Subscription-Key': '9814c8a1fed24636852cabbb65974d43' },
+    method: "GET"
   }).then(function (response) {
-    console.log(response);
+    console.log(response[0]);
 
     for (var i = 1; i < 6; i++) {
-      var newsAuthor = response.author;
-      var newsTitle = response.title;
-      var newsId = response.source.id;
+      var newsName = response.name;
       var newsDescription = response.description;
-      var newsURL = response.url;
-      var newsImageUrl = reposnse.urlToImage;
+      var newsUrl = response.url;
+      var thumbnailUrl = reposnse.image.thumbnail.contentUrl;
 
       var newsImageEl = $("<img>");
       newsImageEl.img(newsImageUrl);
-      $("#news").append(newsImageUrl);
-      $("#news").append(newsURl);
+      $("#news").append(thumbnailUrl);
 
-      var titleEl = $("<p>");
-      titleEl.text(newsTitle);
-      $("#news").append(titleEL);
-
-      var authorEl = $("<p>");
-      authorEl.text(newsAuthor);
-      $("#news").append(authorEL);
-
-      var sourceEl = $("<p>");
-      sourceEl.text(newsId);
-      $("#news").append(sourceEL);
+      var nameEl = $("<p>");
+      nameEl.text(newsName);
+      $("#news").append(nameEl);
 
       var descriptionEl = $("<p>");
       descriptionEl.text(newsDescription);
-      $("#news").append(descriptionEL);
+      $("#news").append(descriptionEl);
 
+      var linkEl = $("<p>");
+      linkEl.text(newsUrl);
+      $("#news").append(newsEl);
 
       console.log("titleEl");
       console.log("authorEl");
@@ -46,3 +46,4 @@ function newsApiCall() {
   });
 
 }
+});
