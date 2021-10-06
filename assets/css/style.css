@@ -19,6 +19,7 @@ body {
  }
  
  .parallax-container {
+   padding-bottom: 400px;
    min-height: 380px;
    line-height: 0;
    height: auto;
