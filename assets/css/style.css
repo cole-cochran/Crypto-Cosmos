@@ -57,7 +57,8 @@ body {
  }
 
  #label {
-   font-size: 22px;
+   text-align: center;
+   font-size: 25px;
  }
 
  .select {
@@ -69,9 +70,10 @@ body {
 }
 
 .select-dropdown {
-  color: white;
+  color:white;
 }
- 
+
+
 
 
 
