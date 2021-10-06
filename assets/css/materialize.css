@@ -7165,7 +7165,7 @@ select {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 10px solid #52f2d5;
   outline: none;
   height: 3rem;
   line-height: 3rem;
