@@ -1,5 +1,7 @@
 body {
     font-family: 'Kanit';
+    background: rgb(13,13,13);
+    background: linear-gradient(90deg, rgba(13,13,13,1) 0%, rgba(45,91,69,0.7875525210084033) 100%);
 }
 
  nav ul a,
@@ -50,6 +52,10 @@ body {
  
  footer.page-footer {
    margin: 0;
+ }
+
+ #label {
+   font-size: 22px;
  }
 
  
