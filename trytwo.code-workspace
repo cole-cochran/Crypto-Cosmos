@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\mebe2ndwindy"
+		}
+	],
+	"settings": {
+		"window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName} ${separator} [Branch: NATHANDELMAN]"
+	}
+}
