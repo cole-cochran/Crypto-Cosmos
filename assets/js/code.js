@@ -309,8 +309,10 @@ $.ajax({
       ];
       
       var data = {
+
         labels: labels,
         datasets: [{
+          
           label: 'Binance Market Chart',
           backgroundColor: 'rgb(255, 99, 132)',
           borderColor: 'rgb(255, 99, 132)',
