@@ -803,7 +803,7 @@ $.ajax({
     "wednesday",
     "thursday",
     "friday",
-    "saturday",
+    "saturdaygit pu",
     "sunday",
   ];
 
@@ -828,4 +828,3 @@ $.ajax({
     document.getElementById('myChart'),
     config)
 });
-*/
