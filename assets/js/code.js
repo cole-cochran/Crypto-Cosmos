@@ -245,7 +245,6 @@ function search(){
     url: geckoCoins + 'markets?vs_currency='+ userInputCurr +'&ids='+ userInputCoinGr +'&order=market_cap_desc&per_page=100&page=1&sparkline=true'
     ,
     method: 'GET',
-
 //}).then(function (response) {
     //console.log('EXCHANGE RATES \n-------------');
    // var rp1 = response.rates
@@ -793,50 +792,49 @@ $.ajax({
   exchangeRatesVan.push(response);
 });
 
-$.ajax({
-  url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
-  method: "GET",
-}).then(function (response) {
-  console.log(
-    "BITCOIN MARKET CAP////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------"
-  );
-  var sp1 = response[0];
-  var sp2 = sp1.sparkline_in_7d;
-  //console.log(sp2)
-  sparkline.push(sp2);
-  var sp3 = sp2.price;
-  console.log(sp3)
-  //data.datasets.push(sp3)
- const labels = [
-    "monday",
-    "Tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-    "sunday",
-  ];
+// $.ajax({
+//   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
+//   method: "GET",
+// }).then(function (response) {
+//   console.log(
+//     "BITCOIN MARKET CAP////WITH THE SPARKLINE THIS IS GONNA THROW ERRORS BC OF CHART IGNORE \n-------------"
+//   );
+//   var sp1 = response[0];
+//   var sp2 = sp1.sparkline_in_7d;
+//   //console.log(sp2)
+//   sparkline.push(sp2);
+//   var sp3 = sp2.price;
+//   console.log(sp3)
+//   //data.datasets.push(sp3)
+//  const labels = [
+//     "monday",
+//     "Tuesday",
+//     "wednesday",
+//     "thursday",
+//     "friday",
+//     "saturday",
+//     "sunday",
+//   ];
 
-  var data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "Bitcoin Market Cap Chart",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255, 99, 132)",
-        data: sp3,
-      },
-    ],
-  };
+//   var data = {
+//     labels: labels,
+//     datasets: [
+//       {
+//         label: "Bitcoin Market Cap Chart",
+//         backgroundColor: "rgb(255, 99, 132)",
+//         borderColor: "rgb(255, 99, 132)",
+//         data: sp3,
+//       },
+//     ],
+//   };
 
-  const config = {
-    type: "line",
-    data: data,
-    options: {},
-  };
+//   const config = {
+//     type: "line",
+//     data: data,
+//     options: {},
+//   };
 
-  var myChart = new Chart(
-    document.getElementById('myChart'),
-    config)
-});
-
+//   var myChart = new Chart(
+//     document.getElementById('myChart'),
+//     config)
+// });
