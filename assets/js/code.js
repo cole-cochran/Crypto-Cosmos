@@ -175,7 +175,7 @@ var displayResults = function(data, query) {
           options: {}
         };
         var myChart = new Chart(
-          document.getElementById('results1'),
+          document.getElementById('cryptoChart'),
           config)
       
        }   return;
