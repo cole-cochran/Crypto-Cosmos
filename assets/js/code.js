@@ -118,10 +118,66 @@ var displayResults = function(data, query) {
 
         console.log(query);
         console.log(data);
-       
-        results1.push(sp3)
-        console.log(results1)
+        x= $('#results1')
+       x.append(sp3)
+       // results1.push(sp3)
+        //console.log(results1)
+        const labels = [
+          'monday',
+          'Tuesday',
+          'wednesday',
+          'thursday',
+          'friday',
+          'saturday',
+          'sunday',
+          ////////
+         /* '1:00pm',
+          '2:00pm',
+          '3:00pm',
+          '4:00pm',
+          '5:00pm',
+          '6:00pm,
+          '7:00am',
+          '8:00am',
+          '9:00am',
+          '10:00am',
+          '11:00am',
+          '12:00pm',
+          '1:00pm',
+          '2:00pm',
+          '3:00pm',
+          '4:00pm',
+          '5:00pm',
+          '6:00pm,
+          '7:00pm',
+          '8:00pm',
+          '9:00pm',
+          '10:00pm',
+          '11:00pm',
+          '12:00am',*/
+        ];
         
+        var data = {
+  
+          labels: labels,
+          datasets: [{
+            
+            label: 'Binance Market Chart',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: sp3
+          }]
+        };
+        
+      const config = {
+          type: 'line',
+          data: data,
+          options: {}
+        };
+        var myChart = new Chart(
+          document.getElementById('results1'),
+          config)
+      
        }   return;
     } 
     submit.on('click', function(event) {
@@ -675,19 +731,7 @@ $.ajax({
         'sunday',
         /*'1:00am',
         '2:00am',
-        '3:00am',
-        '4:00am',
-        '5:00am',
-        '6:00am',
-        '7:00am',
-        '8:00am',
-        '9:00am',
-        '10:00am',
-        '11:00am',
-        '12:00pm',
-        '1:00pm',
-        '2:00pm',
-        '3:00pm',
+       
         '4:00pm',
         '5:00pm',
         '6:00pm,
@@ -793,7 +837,7 @@ $.ajax({
   exchangeRatesVan.push(response);
 });
 
-var getLocSearch = function(userInputCurr) {
+var getLocSearch1 = function(userInputCurr) {
   var coinGr=userInputCurr.val()
 
   var locApiUrl = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=' +coinGr + '&to_currency=USD&apikey=OMI2ERRUQEZP3AQO'
@@ -802,7 +846,7 @@ var getLocSearch = function(userInputCurr) {
       .then(function(response) {
           if (response.ok) {
               response.json().then(function(data) {
-                  displayResults(data,coinGr)
+                  displayResults1(data,coinGr)
               });
           } else {
               alert('Error: ' + response.statusText);
@@ -813,7 +857,7 @@ var getLocSearch = function(userInputCurr) {
           console.log(error);
       });
 };
-var displayResults = function(data, query) {
+var displayResults1 = function(data, query) {
   if (data.length === 0) {
       displaySearch.textContent = 'No Data Found...';
       return;
@@ -848,7 +892,7 @@ var displayResults = function(data, query) {
   } 
   submit2.on('click', function(event) {
   event.preventDefault();
-  getLocSearch(userInputCurr)
+  getLocSearch1(userInputCurr)
 //console.log()
 
 })
