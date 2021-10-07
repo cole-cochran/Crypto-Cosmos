@@ -41,7 +41,6 @@ function newsApiCall() {
     }
       var nameEl = $("<p>");
       nameEl.text(newsName);
-      nameEl.css("background-color", "red")
       $("#articles").append(nameEl);
 
       var descriptionEl = $("<p>");
