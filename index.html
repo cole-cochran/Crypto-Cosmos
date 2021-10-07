@@ -119,7 +119,28 @@
         </div>
       </div>
     </div>
+  <!-- Modal Trigger -->
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <p ></p>
+      <div id="results2"></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+    </div>
+  </div>
+  <div id="modal2" class="modal2">
+    <div class="modal-content">
+      <p ></p>
+      <div id="results1"></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Done</a>
+    </div>
+  </div>
     <div class="container">
       <div class="section">
         <div class="row">
@@ -133,7 +154,6 @@
               </div>
               <div class="input-field col s12">
                 <select id="user-choice1" multiple>
-                  <option disabled selected></option>
                   <option value="bitcoin">Bitcoin</option>
                   <option value="ethereum">Ethereum</option>
                   <option value="binancecoin">Binance Coin</option>
@@ -156,7 +176,7 @@
                   <option value="litecoin">Litecoin</option>
                 </select>
               </div>
-              <a id="submit" class="waves-effect waves-light btn align-right"
+              <a id="submit" class="waves-effect waves-light btn modal-trigger"
                 >Submit</a
               >
             </div>
@@ -168,8 +188,7 @@
               </div>
               <div class="input-field col s12">
                 <select id="user-choice" multiple>
-                  <option disabled selected></option>
-                  <option value="BTC,">Bitcoin</option>
+                  <option value="BTC">Bitcoin</option>
                   <option value="ETH">Ethereum</option>
                   <option value="BUSD">Binance Coin</option>
                   <option value="BTC">Cardono</option>
@@ -191,7 +210,7 @@
                   <option value="LCC">Litecoin</option>
                 </select>
               </div>
-              <a id="submit2" class="waves-effect waves-light btn align-right"
+              <a id="submit2" class="waves-effect waves-light btn align-right modal-trigger" href="#modal1"
                 >Submit</a
               >
             </div>
