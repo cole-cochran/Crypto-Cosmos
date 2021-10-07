@@ -31,7 +31,7 @@ function newsApiCall() {
       console.log(thumbnailUrl);
       var altImageUrl = "./assets/images/background2.jpg";
       var newsImageEl = $("<img>");
-      newsImageEl.attr("src", thumbnailUrl);
+      newsImageEl.attr("src" , thumbnailUrl);
       $("#articles").append(newsImageEl);
     }
     else {
@@ -41,6 +41,7 @@ function newsApiCall() {
     }
       var nameEl = $("<p>");
       nameEl.text(newsName);
+      nameEl.css("background-color", "red")
       $("#articles").append(nameEl);
 
       var descriptionEl = $("<p>");
@@ -56,6 +57,6 @@ function newsApiCall() {
     }
 
   });
-
 }
 });
+
