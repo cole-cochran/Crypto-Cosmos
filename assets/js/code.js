@@ -5,7 +5,7 @@
 
 var submit = $("#submit");
 var userInputCoin=$('')
-
+var submit2 = $("#submit2")
 var results1=[]
 
 var displaySearch = $("#dispy");
@@ -818,7 +818,7 @@ var displayResults = function(data, query) {
       return;
   } else {
       console.log(data)
-    var sp1 = data.FromCurrencyCode;
+    var sp1 = data;
     console.log(sp1)
 //var sp2 = sp1.sparkline_in_7d;
 //var sp3 = sp2.price;
@@ -832,12 +832,13 @@ var displayResults = function(data, query) {
       
      }   return;
   } 
-  submit.on('click', function(event) {
+  submit2.on('click', function(event) {
   event.preventDefault();
   getLocSearch(userInputCurr)
 
 
 })
+console.log(userInputCurr)
 // $.ajax({
 //   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
 //   method: "GET",
