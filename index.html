@@ -34,12 +34,13 @@
     <nav class="white" role="navigation">
       <div class="nav-wrapper container">
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">News</a></li>
-          
+          <li><a href="index3.html">News</a></li>
+          <li><a href="index2.html">Crypto Exchange Rates</a></li>
+          <li><a href="https://www.coindesk.com/learn/">Coindesk</a></li>
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">News</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"
           ><i class="material-icons">menu</i></a
@@ -48,9 +49,8 @@
     </nav>
     <!-- Materialize Paralax container for first hero image -->
     <header>
-      <h1 class="header center teal-text text-lighten-2">
-        Crypto Cosmos News & Information
-      </h1>
+      <h1 class="header center teal-text text-lighten-2">Crypto Cosmos</h1>
+      <h3 class="header center teal-text text-lighten-2">News & Information</h3>
     </header>
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot">
@@ -70,56 +70,55 @@
         />
       </div>
     </div>
-<div class="containerGraph">
-  <div class="row">
-      <!-- <div class="col s4"> -->
-          <!-- Icon Section   -->
-       <!-- <div class="crypto-graph">
+    <div class="containerGraph">
+      <div class="row">
+        <!-- <div class="col s4"> -->
+        <!-- Icon Section   -->
+        <!-- <div class="crypto-graph">
           <canvas id="myChart"></canvas>
         </div> -->
-    <div class = "col s4 pulse teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartBi"></canvas>
+        <div class="col s4 pulse teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartBi"></canvas>
+          </div>
         </div>
-    </div>
         <!-- <div class="crypto-graph">
           <canvas id="myChartEth"></canvas>
         </div> -->
-        <div class ="col s4 pulse teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartShib"></canvas>
+        <div class="col s4 pulse teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartShib"></canvas>
+          </div>
         </div>
+        <div class="col s4 pulse teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartWall"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s3 teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartUnMar"></canvas>
+          </div>
+        </div>
+        <div class="col s3 teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartAx"></canvas>
+          </div>
+        </div>
+        <div class="col s3 teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartSmo"></canvas>
+          </div>
+        </div>
+        <div class="col s3 teal lighten-3 z-depth-5">
+          <div class="crypto-graph">
+            <canvas id="myChartUfo"></canvas>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class ="col s4 pulse teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartWall"></canvas>
-        </div>
-    </div>
-  </div>
-    <div class = "row">
-      <div class=" col s3 teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartUnMar"></canvas>
-        </div>
-      </div>
-      <div class="col s3 teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartAx"></canvas>
-        </div>
-      </div>
-      <div class ="col s3 teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartSmo"></canvas>
-        </div>
-      </div>
-      <div class="col s3 teal lighten-3 z-depth-5">
-        <div class="crypto-graph">
-          <canvas id="myChartUfo"></canvas>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
     <div class="container">
       <div class="section">
@@ -127,37 +126,43 @@
           <div class="col s12 center">
             <!-- div for search input field to find other crypto currency id="user-choice" -->
             <div class="input-field col s12">
-            <div><label class="teal-text" id="label">Search the top 20 crypto curriencies & compare</label></div>
-            <div class="input-field col s12 ">
-              <select  id="user-choice1" multiple>
-                <option  disabled selected>Crypto Search</option>
-                <option value="bitcoin" >Bitcoin</option>
-                <option value="ethereum">Ethereum</option>
-                <option value="binancecoin">Binance Coin</option>
-                <option value="cardono">Cardono</option>
-                <option value="xrp">XRP</option>
-                <option value="solana">Solana</option>
-                <option value="dogecoin">Dogecoin</option>
-                <option value="polkadot">Polkadot</option>
-                <option value="terra">Terra</option>
-                <option value="avalanche">Avalanche</option>
-                <option value="algorand">Algorand</option>
-                <option value="bitcoincash">Bitcoin Cash</option>
-                <option value="internetcomputer">Internet Computer</option>
-                <option value="polygon">Polygon</option>
-                <option value="cosmos">Cosmos</option>
-                <option value="filecoin">Filecoin</option>
-                <option value="stellar">Stellar</option>
-                <option value="vechain">Vechain</option>
-                <option value="ethereumclassic">Ethereum Classic</option>
-                <option value="litecoin">Litecoin</option>
-              </select>
+              <div>
+                <label class="teal-text" id="label"
+                  >Search the top 20 crypto curriencies & compare</label
+                >
+              </div>
+              <div class="input-field col s12">
+                <select id="user-choice1" multiple>
+                  <option disabled selected>Crypto Search</option>
+                  <option value="bitcoin">Bitcoin</option>
+                  <option value="ethereum">Ethereum</option>
+                  <option value="binancecoin">Binance Coin</option>
+                  <option value="cardono">Cardono</option>
+                  <option value="xrp">XRP</option>
+                  <option value="solana">Solana</option>
+                  <option value="dogecoin">Dogecoin</option>
+                  <option value="polkadot">Polkadot</option>
+                  <option value="terra">Terra</option>
+                  <option value="avalanche">Avalanche</option>
+                  <option value="algorand">Algorand</option>
+                  <option value="bitcoincash">Bitcoin Cash</option>
+                  <option value="internetcomputer">Internet Computer</option>
+                  <option value="polygon">Polygon</option>
+                  <option value="cosmos">Cosmos</option>
+                  <option value="filecoin">Filecoin</option>
+                  <option value="stellar">Stellar</option>
+                  <option value="vechain">Vechain</option>
+                  <option value="ethereumclassic">Ethereum Classic</option>
+                  <option value="litecoin">Litecoin</option>
+                </select>
+              </div>
+              <a id="submit" class="waves-effect waves-light btn align-right"
+                >Submit</a
+              >
             </div>
-            <a id="submit" class="waves-effect waves-light btn align-right">Submit</a>
           </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="parallax-container valign-wrapper">
       <div class="section no-pad-bot">
@@ -183,15 +188,7 @@
               build our professional web portfolio.
             </p>
           </div>
-          <div class="col l3 s12">
-            <!-- <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul> -->
-          </div>
+
           <div class="col l3 s12">
             <h5 class="white-text">Connect</h5>
             <ul>
@@ -203,10 +200,30 @@
                   >Cole's Github</a
                 >
               </li>
-              <li><a class="teal-text" href="#!">Nathan's Github</a></li>
-              <li><a class="teal-text" href="#!">Ismeny's Github</a></li>
-              <li><a class="teal-text" href="#!">Emilio's Github</a></li>
-              <li><a class="teal-text" href="#!">Brian's Github</a></li>
+              <li>
+                <a class="teal-text" href="https://github.com/Delmanat3"
+                  target="_blank"  
+                  >Nathan's Github</a
+                >
+              </li>
+              <li>
+                <a class="teal-text" href="https://github.com/Ismeny"
+                  target="_blank"
+                  >Ismeny's Github</a
+                >
+              </li>
+              <li>
+                <a class="teal-text" href="https://github.com/Emilio512"
+                  target="_blank"
+                  >Emilio's Github</a
+                >
+              </li>
+              <li>
+                <a class="teal-text" href="https://github.com/bmalbright"
+                  target="_blank"
+                  >Brian's Github</a
+                >
+              </li>
             </ul>
           </div>
         </div>
