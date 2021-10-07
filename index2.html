@@ -31,9 +31,23 @@
   </head>
   <body>
     <!-- Materialize Paralax container for first hero image -->
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="#">News</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+      </div>
+  </nav>
     <header>
       <h1 class="header center teal-text text-lighten-2">
-        Crypto Cosmos News & Information
+       Exchange Rates News & Information
       </h1>
     </header>
     <div id="index-banner" class="parallax-container">
@@ -54,88 +68,132 @@
         />
       </div>
     </div>
-    <div>
-      <h1>Placeholder for crypto comparison</h1>
-    </div>
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center"></div>
-        </div>
-      </div>
-    
-      <div class="parallax">
-        <img
-          src="./assets/images/background3.jpg"
-          alt="Unsplashed background img 3"
-        />
-      </div>
-    </div>
-
-    <footer class="page-footer teal">
       <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="teal-text">Team Bio</h5>
-            <p class="grey-text text-lighten-4">
-              We are a team of Bootcamp students working on this project to
-              build our professional web portfolio.
-            </p>
-          </div>
-          <div class="col l3 s12">
-            <!-- <h5 class="white-text">Settings</h5>
-            <ul>
-              <li><a class="white-text" href="#!">Link 1</a></li>
-              <li><a class="white-text" href="#!">Link 2</a></li>
-              <li><a class="white-text" href="#!">Link 3</a></li>
-              <li><a class="white-text" href="#!">Link 4</a></li>
-            </ul> -->
-          </div>
-          <div class="col l3 s12">
-            <h5 class="teal-text">Connect</h5>
-            <ul>
-              <li>
-                <a
-                  class="white-text"
-                  href="https://github.com/cole-cochran"
-                  target="_blank"
-                  >Cole's Github</a
-                >
-              </li>
-              <li><a class="white-text" href="#!">Nathan's Github</a></li>
-              <li><a class="white-text" href="#!">Ismeny's Github</a></li>
-              <li><a class="white-text" href="#!">Emilio's Github</a></li>
-              <li><a class="white-text" href="#!">Brian's Github</a></li>
-            </ul>
+        <div class="section">
+          <div class="row">
+            <div class="col s12 center">
+              <!-- div for search input field to find other crypto currency id="user-choice" -->
+              <div class="input-field col s12">
+              <div><label class="teal-text" id="label">Checkout the top 20 crypto curriencies exchange rates</label></div>
+              <div class="input-field col s12 ">
+                <select  id="user-choice1" multiple>
+                  <option  disabled selected>Crypto Search</option>
+                  <option value="bitcoin" >Bitcoin</option>
+                  <option value="ethereum">Ethereum</option>
+                  <option value="binancecoin">Binance Coin</option>
+                  <option value="cardono">Cardono</option>
+                  <option value="xrp">XRP</option>
+                  <option value="solana">Solana</option>
+                  <option value="dogecoin">Dogecoin</option>
+                  <option value="polkadot">Polkadot</option>
+                  <option value="terra">Terra</option>
+                  <option value="avalanche">Avalanche</option>
+                  <option value="algorand">Algorand</option>
+                  <option value="bitcoincash">Bitcoin Cash</option>
+                  <option value="internetcomputer">Internet Computer</option>
+                  <option value="polygon">Polygon</option>
+                  <option value="cosmos">Cosmos</option>
+                  <option value="filecoin">Filecoin</option>
+                  <option value="stellar">Stellar</option>
+                  <option value="vechain">Vechain</option>
+                  <option value="ethereumclassic">Ethereum Classic</option>
+                  <option value="litecoin">Litecoin</option>
+                </select>
+              </div>
+              <a id="submit" class="waves-effect waves-light btn align-right">Submit</a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- placeholder for footer element from Materialize -->
-      <div class="footer-copyright">
+      </div>
+      <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <div class="row center"></div>
+          </div>
+        </div>
+        <div class="parallax">
+          <img
+            src="./assets/images/background3.jpg"
+            alt="Unsplashed background img 3"
+          />
+        </div>
+      </div>
+  
+      <footer class="page-footer teal">
         <div class="container">
-          Made by
-          <a
-            class="teal-text text-lighten-3"
-            href="https://github.com/cole-cochran/crypto-cosmos"
-            target="_blank"
-            >Cole, Nathan, Emilio, Ismeny, and Brian</a
-          >
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Team Bio</h5>
+              <p class="grey-text text-lighten-4">
+                We are a team of Bootcamp students working on this project to
+                build our professional web portfolio.
+              </p>
+            </div>
+            <div class="col l3 s12">
+            </div>
+            <div class="col l3 s12">
+              <h5 class="white-text">Connect</h5>
+              <ul>
+                <li>
+                  <a
+                    class="teal-text"
+                    href="https://github.com/cole-cochran"
+                    target="_blank"
+                    >Cole's Github</a
+                  >
+                </li>
+                <li>
+                  <a class="teal-text" href="https://github.com/Delmanat3"
+                    target="_blank"
+                    >Nathan's Github</a
+                  >
+                </li>
+                <li>
+                  <a class="teal-text" href="https://github.com/Ismeny"
+                    target="_blank"
+                    >Ismeny's Github</a
+                  >
+                </li>
+                <li>
+                  <a class="teal-text" href="https://github.com/Emilio512"
+                    target="_blank"
+                    >Emilio's Github</a
+                  >
+                </li>
+                <li>
+                  <a class="teal-text" href="https://github.com/bmalbright"
+                    target="_blank"
+                    >Brian's Github</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </footer>
-  </body>
-
-  <!--JavaScript at end of body for optimized loading-->
-  <!--  Scripts-->
-
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="./assets/js/materialize.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./assets/js/init.js"></script>
-  <!-- placeholder for scripts to pull apis -->
-  <script src="./assets/js/code.js"></script>
-  <script src="./assets/js/script.js"></script>
-
-  <!-- placeholder for script to pull apis -->
-  <!-- placeholder for footer element from Materialize -->
-</html>
+        <!-- placeholder for footer element from Materialize -->
+        <div class="footer-copyright">
+          <div class="container">
+            Made by
+            <a
+              class="teal-text text-lighten-3"
+              href="https://github.com/cole-cochran/crypto-cosmos"
+              target="_blank"
+              >Cole, Nathan, Emilio, Ismeny, and Brian</a
+            >
+          </div>
+        </div>
+      </footer>
+    </body>
+  
+    <!--JavaScript at end of body for optimized loading-->
+    <!--  Scripts-->
+  
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="./assets/js/materialize.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/init.js"></script>
+    <!-- placeholder for scripts to pull apis -->
+    <script src="./assets/js/code.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </html>
