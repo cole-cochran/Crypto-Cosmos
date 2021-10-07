@@ -61,6 +61,10 @@ body {
    font-size: 25px;
  }
 
+ #label2 {
+  text-align: center;
+  font-size: 25px;
+}
  .select {
    color: white;
  }
