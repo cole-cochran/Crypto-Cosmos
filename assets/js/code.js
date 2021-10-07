@@ -792,6 +792,52 @@ $.ajax({
   exchangeRatesVan.push(response);
 });
 
+var getLocSearch = function(userInputCurr) {
+  var coinGr=userInputCurr.val()
+
+  var locApiUrl = 'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=' +coinGr + '&to_currency=USD&apikey=OMI2ERRUQEZP3AQO'
+  console.log(userInputCoinGr)
+  fetch(locApiUrl)
+      .then(function(response) {
+          if (response.ok) {
+              response.json().then(function(data) {
+                  displayResults(data,coinGr)
+              });
+          } else {
+              alert('Error: ' + response.statusText);
+          }
+      })
+      .catch(function(error) {
+          alert("Can't connect to the Lords Prayer");
+          console.log(error);
+      });
+};
+var displayResults = function(data, query) {
+  if (data.length === 0) {
+      displaySearch.textContent = 'No Data Found...';
+      return;
+  } else {
+      console.log(data)
+    var sp1 = data.FromCurrencyCode;
+    console.log(sp1)
+//var sp2 = sp1.sparkline_in_7d;
+//var sp3 = sp2.price;
+//console.log(sp3)
+
+      console.log(query);
+      console.log(data);
+     
+      results1.push(sp3)
+      console.log(results1)
+      
+     }   return;
+  } 
+  submit.on('click', function(event) {
+  event.preventDefault();
+  getLocSearch(userInputCurr)
+
+
+})
 // $.ajax({
 //   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
 //   method: "GET",
