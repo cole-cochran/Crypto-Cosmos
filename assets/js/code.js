@@ -13,6 +13,7 @@ var results1=[]
 
 var results2 =[]
 
+var clear=$('#remove')
 
 var displaySearch = $("#dispy");
 
@@ -909,6 +910,14 @@ console.log(userInputCoin)
 console.log(why)
 
 })
+
+clear.on('click',function(){
+localStorage.clear('2ndchoice')
+userInputCoin.hide()
+}
+
+
+)
 
 // $.ajax({
 //   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
