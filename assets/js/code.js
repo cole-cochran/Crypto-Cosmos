@@ -4,10 +4,16 @@
 //var userChoice2=$('#user-choice2');
 
 var submit = $("#submit");
-var userInputCoin=$('')
+
+var userInputCoin=$('#appendMe')
+
 var submit2 = $("#submit2")
+
 var results1=[]
+
 var results2 =[]
+
+var clear=$('#remove')
 
 var displaySearch = $("#dispy");
 
@@ -162,7 +168,7 @@ var displayResults = function(data, query) {
           labels: labels,
           datasets: [{
             
-            label: 'Binance Market Chart',
+            label:'Market Chart vs USD',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
             data: sp3
@@ -881,12 +887,9 @@ var displayResults1 = function(data, query) {
        //var x = sp2;
        //console.log(x)
       x= $('#results2')
-      //console.log(x)
+      
       x.append(sp2)
-      // y = $("p")
-      // console.log(y)
-      // z = y.val()
-      // z = x
+      localStorage.setItem('2ndchoice',sp2)
 
      }   return;
   } 
@@ -897,6 +900,25 @@ var displayResults1 = function(data, query) {
 
 })
 console.log(userInputCurr)
+
+
+$(document).on('ready' ,function saverStorer(){
+var why = localStorage.getItem('2ndchoice')
+userInputCoin.append(why)
+console.log(userInputCoin)
+
+console.log(why)
+
+})
+
+clear.on('click',function(){
+localStorage.clear('2ndchoice')
+userInputCoin.hide()
+clear.hide()
+}
+
+
+)
 
 // $.ajax({
 //   url: "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin&order=market_cap_desc&per_page=100&page=1&sparkline=true",
