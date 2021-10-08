@@ -914,6 +914,7 @@ console.log(why)
 clear.on('click',function(){
 localStorage.clear('2ndchoice')
 userInputCoin.hide()
+clear.hide()
 }
 
 
