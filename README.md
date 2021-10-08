@@ -1,9 +1,8 @@
 # Crypto Cosmos - group-project-1
-A crypto currency dashboard with news and content.
+
 
 ## Description
-A way to monitor cryptocurrency and their shifting value so that you can manage your crypto assets. Our project includes graphs designed to display the top 7 markets total value of cryptocurrency. We also provide a search feature that allows you to choose from the top 20 crypto currencies and compare them. Our site also provides real time news on crypto currency
-and related stock market information. 
+ A dashboard to monitor cryptocurrency and their shifting values so that you can manage your crypto assets. Our project includes graphs designed to display the top 7 markets total value of cryptocurrency. We also provide a search feature that allows you to choose from the top 20 crypto currencies and compare them. Our site also provides real time news on crypto currency and related stock market information. 
 
 ## Table of Contents 
 * Installation
@@ -18,13 +17,17 @@ Go to URL : ***INSERT URL***
 
 
 ## Usage
-Go to URL and start exploring! <br >
-Here you can select from the top 20 crypto currencies you would like to view and compare  <br >
-After clicking submit you will be routed to a new page that displays (what is getting displayed after submit?) <br>
-Here you can view (the information on new page) <br >
-From here or the main page you can also select to view the live news feed (where are we clicking to get to the news page)<br >
-This will also take you to a new page (screenshot new page) <br >
-Here you can view real time news on crypto currency and related stock market information 
+* Go to URL and start exploring! <br >
+![Screenshot](assets/images/homepg.png)
+* Here you can select from the top 20 crypto currencies you would like to view and compare  <br >
+![Screenshot](assets/images/search-options.png)
+* After clicking submit you will be presented with the information requested <br>
+![Screenshot](assets/images/choices.png)
+![Screenshot](assets/images/modal.png)
+* Our navigation bar will allow you to move back and forth between the home page and news page. The Coindesk option will open a new page to their website.  <br >
+![Screenshot](assets/images/navbar.png)
+* Here you can view real time news on crypto currency and related stock market information 
+![Screenshot](assets/images/news.png)
 
 ## Credits
 This website was built using: <br >
