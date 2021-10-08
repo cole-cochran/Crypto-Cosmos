@@ -13,7 +13,7 @@
 * Test
 
 ## Installation
-Go to URL : ***INSERT URL***
+Go to URL : ***https://cole-cochran.github.io/crypto-cosmos/***
 
 
 ## Usage
