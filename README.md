@@ -1,4 +1,4 @@
-# Crypto Cosmos - group-project-1
+# Crypto Cosmos 
 
 
 ## Description
@@ -13,7 +13,7 @@
 * Test
 
 ## Installation
-Go to URL : ***https://cole-cochran.github.io/crypto-cosmos/***
+Go to URL : ***https://cole-cochran.github.io/Crypto-Cosmos/***
 
 
 ## Usage
